@@ -10,7 +10,7 @@
 ## Owners
 
 - reem@freightos.com
-
+## Usage
 ### Color Palette
 
 A color palette displayed in the panel, helping you pick predefined colors.
