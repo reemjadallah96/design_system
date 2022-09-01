@@ -1,6 +1,6 @@
 name: design_system
 description: Futter design system package that contains themed components, colors pallete and fonts.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/reemjadallah96/design_system
 
 environment:
