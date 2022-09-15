@@ -31,29 +31,21 @@ class Button extends StatelessWidget {
     Color borderColor;
     switch (type) {
       case 'secondary':
-        {
-          color = Colors.white;
-          borderColor = ColorTokens.primary_blue_30;
-          break;
-        }
+        color = Colors.white;
+        borderColor = ColorTokens.primary_blue_30;
+        break;
       case 'text':
-        {
-          color = Colors.white;
-          borderColor = Colors.white;
-          break;
-        }
+        color = Colors.white;
+        borderColor = Colors.white;
+        break;
       case 'danger':
-        {
-          color = Colors.red;
-          borderColor = Colors.red;
-          break;
-        }
+        color = Colors.red;
+        borderColor = Colors.red;
+        break;
       default:
-        {
-          color = ColorTokens.primary_blue_30;
-          borderColor = ColorTokens.primary_blue_30;
-          break;
-        }
+        color = ColorTokens.primary_blue_30;
+        borderColor = ColorTokens.primary_blue_30;
+        break;
     }
 
     return SizedBox(
@@ -78,15 +70,11 @@ class Button extends StatelessWidget {
     switch (type) {
       case 'text':
       case 'secondary':
-        {
-          textColor = ColorTokens.primary_blue_30;
-          break;
-        }
+        textColor = ColorTokens.primary_blue_30;
+        break;
       default:
-        {
-          textColor = Colors.white;
-          break;
-        }
+        textColor = Colors.white;
+        break;
     }
     if (isLoading) return CircularProgressIndicator(color: Color(0xFF58D890));
     Widget textWidget = Text(
@@ -94,13 +82,10 @@ class Button extends StatelessWidget {
       style: TextStyle(color: textColor, fontSize: 16),
     );
     if (icon == null) return textWidget;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, color: Colors.white),
-        SizedBox(width: 8),
-        textWidget,
-      ],
-    );
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Icon(icon, color: Colors.white),
+      SizedBox(width: 8),
+      textWidget,
+    ]);
   }
 }
