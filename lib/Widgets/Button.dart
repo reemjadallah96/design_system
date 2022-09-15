@@ -1,14 +1,18 @@
 import 'package:design_system/Tokens.dart/ColorTokens.dart';
 import 'package:flutter/material.dart';
 
+enum ButtonType { primary, secondary, text, danger }
+
 /**
  * Button widget with different types ('primary', 'secondary', 'text', 'danger')
  * Default themed button is 'primary'
  */
 class Button extends StatelessWidget {
   final String text;
-  final String type;
+  final ButtonType type;
   final double width, height;
+  final double? elevation;
+  final double borderRadius;
   final VoidCallback onPressed;
   final VoidCallback? onLongPress;
   final IconData? icon;
@@ -17,9 +21,11 @@ class Button extends StatelessWidget {
   Button({
     required this.text,
     required this.onPressed,
-    this.type = 'primary',
+    this.type = ButtonType.primary,
     this.width = double.infinity,
     this.height = 40,
+    this.elevation,
+    this.borderRadius = 4,
     this.onLongPress,
     this.icon,
     this.isLoading = false,
@@ -30,15 +36,15 @@ class Button extends StatelessWidget {
     Color color;
     Color borderColor;
     switch (type) {
-      case 'secondary':
+      case ButtonType.secondary:
         color = Colors.white;
         borderColor = ColorTokens.primary_blue_30;
         break;
-      case 'text':
+      case ButtonType.text:
         color = Colors.white;
         borderColor = Colors.white;
         break;
-      case 'danger':
+      case ButtonType.danger:
         color = Colors.red;
         borderColor = Colors.red;
         break;
@@ -53,13 +59,14 @@ class Button extends StatelessWidget {
       height: height,
       child: MaterialButton(
         child: buttonContent,
+        elevation: elevation,
         onPressed: isLoading ? null : onPressed,
         onLongPress: isLoading ? null : onLongPress,
         disabledColor: Colors.grey,
         color: color,
         shape: RoundedRectangleBorder(
           side: BorderSide(color: borderColor),
-          borderRadius: BorderRadius.all(Radius.circular(4)),
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
       ),
     );
@@ -68,8 +75,8 @@ class Button extends StatelessWidget {
   Widget get buttonContent {
     Color textColor;
     switch (type) {
-      case 'text':
-      case 'secondary':
+      case ButtonType.text:
+      case ButtonType.secondary:
         textColor = ColorTokens.primary_blue_30;
         break;
       default:
