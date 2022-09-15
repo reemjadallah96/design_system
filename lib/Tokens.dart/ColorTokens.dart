@@ -10,6 +10,7 @@ class ColorTokens {
   static const primary_blue = Color(0xFF2075BD);
   static const primary_blue_30 = Color(0XFF2568A2);
   static const primary_green_5 = Color(0XFFAEF4BD);
+  static const primary_green_10 = Color(0xFF58D890);
   static const deep_green_40 = Color(0xFF036E4E);
   static const primary_grey_5 = Color(0xFFF5F5F5);
   static const primary_grey_10 = Color(0xFFE6E7E7);
