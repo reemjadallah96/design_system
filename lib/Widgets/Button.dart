@@ -11,16 +11,16 @@ class Button extends StatelessWidget {
   final String text;
   final ButtonType type;
   final double width, height;
-  final double? elevation;
+  final double elevation;
   final double borderRadius;
   final VoidCallback onPressed;
-  final VoidCallback? onLongPress;
-  final IconData? icon;
+  final VoidCallback onLongPress;
+  final IconData icon;
   final bool isLoading;
 
   Button({
-    required this.text,
-    required this.onPressed,
+    @required this.text,
+    @required this.onPressed,
     this.type = ButtonType.primary,
     this.width = double.infinity,
     this.height = 40,
